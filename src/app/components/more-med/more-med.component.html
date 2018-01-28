@@ -1,0 +1,61 @@
+<body dir="rtl">
+  <div class="container">
+     
+       <h2> <i class="fa fa-database" fa-3x></i>      قاعده بيانات الايتام </h2>
+      
+        <table class="table table-hover ">
+        
+
+            <tbody>
+                <tr>
+                  <td> اسم الدواء : {{item.name}}</td>                   
+                  <th> السعر : {{item.price}}</th>
+                  <td>الكمية : {{item.quan}}</td>
+                  <td> الصلاحية : {{item.date}}</td>
+                  <td>اسم المندوب: {{item.Sname}}</td>
+                  <td>عدد الاكياس : {{item.numC}}</td>
+                  <td><a [routerLink]="['/edit-orphan/'+item.$key]" href=""><i class="fa fa-pencil-square-o"></i></a></td>                  
+                  <td><a [routerLink]="['more-info/'+item.$key]" href=""><i class="fa fa-info-circle"></i></a></td>
+                  <td><a (click)="Delete(item.$key)"><i class="fa fa-trash-o"></i></a></td>
+                  
+                </tr>
+      </table>
+      </div>
+
+</body>
+
+
+<body dir="rtl">
+  <div class="container">
+      <br/><br/>
+  <div class="card mb-3">
+  <h2 class="card-header">
+    المعلومات الشخصيه
+  </h2>
+ <div class="card-body">
+  <img class="img-thumbnail"  
+  src="{{image}}" alt="orphan image">
+  
+  <ul class="list-group">
+  
+   
+    <li class="list-group-item"> اسم الدواء : {{item.name}}</li>                   
+    <li class="list-group-item"> السعر : {{item.price}}</li>
+    <li class="list-group-item">الكمية : {{item.quan}}</li>
+    <li class="list-group-item"> الصلاحية : {{item.date}}</li>
+    <li class="list-group-item">اسم المندوب: {{item.Sname}}</li>
+    <li class="list-group-item">عدد الاكياس : {{item.numC}}</li>
+    
+  </ul>
+  
+</div>
+  <div class="card-footer ">
+      <a [routerLink]="['/edit-med/'+med.$key]" class="btn btn-success">Edit</a><br/>
+      <a (click)="Delete(med.$key)" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+
+
+
+</div>
+</body>

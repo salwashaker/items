@@ -1,0 +1,41 @@
+<body dir="rtl">
+  <div class="container">
+     
+       <h2> <i class="fa fa-database" fa-3x></i>      قاعده بيانات الايتام </h2>
+      
+        <table class="table table-hover ">
+          <thead>
+              <tr class="tr-head">
+                  <th scope="col">رقم الدواء</th>
+                <th scope="col">  اسم الدواء </th>
+                <th scope="col"> السعر</th>
+                <th scope="col">الكمية </th>
+                <th scope="col">الصلاحية </th>
+                <th scope="col">اسم المندوب</th>
+                <th scope="col">عدد الاكياس</th>
+                <th scope="col"></th>
+                <th scope="col"></th><th scope="col"></th>
+                
+                
+              </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of meds ; let i = index">
+                   <td>{{i+1}}</td>
+                  <td>{{item.name}}</td>                   
+                  <th>{{item.price}}</th>
+                  <td>{{item.quan}}</td>
+                  <td>{{item.date}}</td>
+                  <td>{{item.Sname}}</td>
+                  <td>{{item.numC}}</td>
+                  <td><a [routerLink]="['/edit-orphan/'+item.$key]" href=""><i class="fa fa-pencil-square-o"></i></a></td>                  
+                  <td><a [routerLink]="['more-info/'+item.$key]" href=""><i class="fa fa-info-circle"></i></a></td>
+                  <td><a (click)="Delete(item.$key)"><i class="fa fa-trash-o"></i></a></td>
+                  
+                </tr>
+      </table>
+      </div>
+
+</body>
+
